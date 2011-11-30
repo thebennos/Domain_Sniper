@@ -1,0 +1,18 @@
+This is a PHP script that will ensure that you are able to purchase your domain name before anyone else.
+
+//////////////////
+FEATURES
+/////////////////
+
+1. Automatically checks to see if a domain name or a group of domain names is available for purchase (via Cron).
+2. Automatically purchases the domain(s) if set to do so.
+3. Adds funds to your account if funds are insufficient for domain purchase.
+4. Includes a set of advanced options for setting nameservers, automatic renewal, etc...
+
+//////////////////
+TO-DO
+/////////////////
+
+1. Find out how to add funds to account (since registrar's API doesn't offer that functionality).
+2. Find out how to add funds without hard-coding personal information.
+3. Get it to work with more than just Dynadot's API.
