@@ -34,16 +34,17 @@
 
 	<div id="content">
 		<!--This is the main content area. Everything goes here.-->
-		<form action="Job_Add.php" method=post>
-			Domain Name: <input type="text" name="domain" /><br />
+		<form action="Add_Job.php" method=post>
+			Domain Name(s)(Comma seperated list, no spaces) : <input type="text" name="domain" /><br />
 			Hour To Begin: <input type="text" name="b_hour" /><br />
 			Hour To End: <input type="text" name="e_hour" /><br />
-			Day To Begin: <input type="text" name="b_day" /><br />
-			Day To End: <input type="text" name="e_day" /><br />
-			Month To Begin: <input type="text" name="b_month" /><br />
-			Month To End: <input type="text" name="e_month" /><br />
+			Day: <input type="text" name="b_day" /><br />
+			Month: <input type="text" name="b_month" /><br />
 			Frequency (In Minutes): <input type="text" name="freq" /><br />
-			<input type="submit" value="Commit" />
+			<input type="submit" value="Add Jobs" />
+		</form>
+		<form action="Commit_Jobs.php" method=post>
+			<input type="submit" value="Commit Jobs" />
 		</form>
 	</div>
 

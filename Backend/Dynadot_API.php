@@ -6,8 +6,13 @@
 		private $api_url;
 		function isAvailable($domain_name){
 			$request_url = $this->api_url."search&domain0=$domain_name";
-			return parse_tokens(get_SSL_resource($request_url));
-		{
+			if(strpos(get_SSL_resource($request_url), "yes")){
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
 		function renew($domain_name, $duration){
 			$request_url = $this->api_url."renew&domain=$domain_name"."&duratio				n=$duration";
 			return parse_tokens(get_SSL_resource($request_url));
