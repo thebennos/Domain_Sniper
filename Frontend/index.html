@@ -1,6 +1,6 @@
 <HTML>
 <HEAD>
-	<title>PAGE TITLE</title>
+	<title>Domain Sniper</title>
 	<link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body>
@@ -26,8 +26,8 @@
 		<nav>
 			<b><a href="#">HOME</a></b> |
 			<a href="scheduler.html">SCHEDULER</a> |
-			<a href="logs.html">LOGS</a> |
-			<a href="settings.html">SETTINGS</a> 
+			<a href="reg.out">LOGS</a> |
+		<!--	<a href="settings.html">SETTINGS</a> -->
 		</nav>
 		<!--Needs to be custom made for each page at this time-->
 	</div>
@@ -35,12 +35,13 @@
 	<div id="content">
 		<!--This is the main content area. Everything goes here.-->
 		<form action="Add_Job.php" method=post>
-			Domain Name(s)(Comma seperated list, no spaces) : <input type="text" name="domain" /><br />
+			Domain Name(s)(Comma seperated list, no spaces, no www) : <input type="text" name="domains" /><br />
 			Hour To Begin: <input type="text" name="b_hour" /><br />
 			Hour To End: <input type="text" name="e_hour" /><br />
 			Day: <input type="text" name="b_day" /><br />
 			Month: <input type="text" name="b_month" /><br />
-			Frequency (In Minutes): <input type="text" name="freq" /><br />
+			Minute To Begin: <input type="text" name="b_minute" /><br />
+			Minute To End: <input type="text" name="e_minute" /><br />
 			<input type="submit" value="Add Jobs" />
 		</form>
 		<form action="Commit_Jobs.php" method=post>

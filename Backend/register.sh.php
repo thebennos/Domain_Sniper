@@ -1,24 +1,33 @@
 #!/usr/bin/php
 <?php include 'Dynadot_API.php';
-	try{
+	if($argv[2] == NULL){exit(1);}
 	$D_api = new Dynadot_API("7R8g8R7q6Ce9I8I8H7Qv6Z6y857Z8f");
-	if ($argv[1] != NULL){
-		if(strpos(implode(" ",$D_api->isAvailable($argv[1])), "yes")){
-			$f_ptr = fopen("/srv/www/zer0-one.net/public_/test/domain_list", "a+");
-			fwrite($f_ptr, "$argv[1] is available");
-			fclose($f_ptr);
+	$file = file($argv[1], FILE_IGNORE_NEW_LINES);
+	while(true){
+		if((count($file) == 0) || (date("Gi") == $argv[2])){break;}
+		for($i = 0; $i < count($file); $i++){
+			if($D_api->isAvailable($file[$i])){
+			//	$response = $D_api->register($file[$i, "1");
+				$f_ptr = fopen("/srv/www/zer0-one.net/public_/test/reg.txt", "a+");
+				$temp = count($file);
+				fwrite($f_ptr, date("r")." $file[$i] was checked and is available"." Index:$i  count(file):$temp \n");
+				if(($D_api->register($file[$i, "1") == "true"){
+					fwrite($f_ptr, date("r")." $file[$i] was registered"." Index:$i  count(file):$temp \n");
+				}
+				else{
+					fwrite($f_ptr, date("r")." $file[$i] was not registered: ".$response." Index:$i  count(file):$temp \n");
+				}
+				fclose($f_ptr);
+				unset($file[$i]);
+				$file = array_values($file);
+			}
+			else{
+				$f_ptr = fopen("/srv/www/zer0-one.net/public_/test/reg.txt", "a+");
+				$temp = count($file);
+				fwrite($f_ptr, "$file[$i] was checked and is not available"." Index:$i  count(file):$temp \n");
+					fclose($f_ptr);
+			}
+			sleep(10);
 		}
-		else{
-			$f_ptr = fopen("/srv/www/zer0-one.net/public_/test/domain_list", "a+");
-			fwrite($f_ptr, "$argv[1] is not available");
-			fclose($f_ptr);
-		}	
-		//$D_api->register(argv[1]);
-	}
-	}
-	catch(Exception $e){
-		$f_ptr = fopen("/srv/www/zer0-one.net/public_/test/error.out", "a+");
-		fwrite($f_ptr, $e->getMessage());
-		fclose($f_ptr);
 	}
 ?>

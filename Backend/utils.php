@@ -4,10 +4,13 @@
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		$resource = curl_exec($ch);
+		if (curl_errno($ch)){
+			echo("CURL ERROR: ".curl_error($ch));
+		}
 		curl_close($ch);
 		return $resource;
 	}
-	function parse_tokens($document){
+	function split_tokens($document){
 		$tokens = explode(",", $document.",");
 		return $tokens;
 	}
