@@ -7,11 +7,11 @@
 		if((count($file) == 0) || (date("Gi") == $argv[2])){break;}
 		for($i = 0; $i < count($file); $i++){
 			if($D_api->isAvailable($file[$i])){
-			//	$response = $D_api->register($file[$i, "1");
-				$f_ptr = fopen("/srv/www/zer0-one.net/public_/test/reg.txt", "a+");
+				$response = $D_api->register($file[$i], "1");
+				$f_ptr = fopen("reg.txt", "a+");
 				$temp = count($file);
 				fwrite($f_ptr, date("r")." $file[$i] was checked and is available"." Index:$i  count(file):$temp \n");
-				if(($D_api->register($file[$i, "1") == "true"){
+				if(($response == true){
 					fwrite($f_ptr, date("r")." $file[$i] was registered"." Index:$i  count(file):$temp \n");
 				}
 				else{
@@ -22,10 +22,10 @@
 				$file = array_values($file);
 			}
 			else{
-				$f_ptr = fopen("/srv/www/zer0-one.net/public_/test/reg.txt", "a+");
+				$f_ptr = fopen("reg.txt", "a+");
 				$temp = count($file);
 				fwrite($f_ptr, "$file[$i] was checked and is not available"." Index:$i  count(file):$temp \n");
-					fclose($f_ptr);
+				fclose($f_ptr);
 			}
 			sleep(10);
 		}

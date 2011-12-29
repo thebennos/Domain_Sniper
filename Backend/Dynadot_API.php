@@ -14,8 +14,8 @@
 			}
 		}
 		function renew($domain_name, $duration){
-			$request_url = $this->api_url."renew&domain=$domain_name"."&duratio	n=$duration";
-			return split_tokens(get_SSL_resource($request_url));
+			$request_url = $this->api_url."renew&domain=$domain_name"."&duration=$duration";
+			return get_SSL_resource($request_url);
 		}
 		function register($domain_name, $duration){
 			$request_url = $this->api_url."register&domain=$domain_name"."&duration=$duration";
@@ -24,7 +24,7 @@
 				return true;
 			}
 			elseif(strpos($response, "not_available")){
-				return "The domain is not available. Someone probably beat you to it.";
+				return "The domain is not available. Someone probably beat you by a hair.";
 			}
 			elseif(strpos($response, "insufficient_funds")){
 				return "Not enough money in the account.";

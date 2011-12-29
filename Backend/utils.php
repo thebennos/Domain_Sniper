@@ -10,8 +10,4 @@
 		curl_close($ch);
 		return $resource;
 	}
-	function split_tokens($document){
-		$tokens = explode(",", $document.",");
-		return $tokens;
-	}
 ?>
