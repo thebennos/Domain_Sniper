@@ -4,7 +4,9 @@
 	$b_hour;
 	$e_hour;
 	if ($_POST['b_am_pm'] == "PM"){$b_hour = $_POST['b_hour'] + 12;}
+	else{$b_hour = $_POST['b_hour'];}
 	if ($_POST['e_am_pm'] == "PM"){$e_hour = $_POST['e_hour'] + 12;}
+	else{$e_hour = $_POST['e_hour'];}
 	$file = realpath("domains/")."/".$_POST['b_month'].$_POST['b_day'].$b_hour.$e_hour;
 	if(file_exists($file)){$new_job = false;}
 	$f_ptr = fopen($file, "a+");
