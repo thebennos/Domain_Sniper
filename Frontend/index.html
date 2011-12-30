@@ -34,8 +34,8 @@
 
 	<div id="content">
 		<!--This is the main content area. Everything goes here.-->
-		<form action="Add_Job.php" method=post>
-			Domain Name(s)(Comma seperated list, no spaces, no www) : <input type="text" name="domains" /><br />
+		<form action="../Backend/Add_Job.php" method=post>
+			Domain Name(s)(Comma seperated list, no spaces, no www) :<br /> <textarea name="domains" rows="36" cols="55"></textarea><br /><!--<input type="text" name="domains" /><br />-->
 			Hour To Begin: <input type="text" name="b_hour" /><br />
 			Hour To End: <input type="text" name="e_hour" /><br />
 			Day: <input type="text" name="b_day" /><br />
@@ -43,9 +43,6 @@
 			Minute To Begin: <input type="text" name="b_minute" /><br />
 			Minute To End: <input type="text" name="e_minute" /><br />
 			<input type="submit" value="Add Jobs" />
-		</form>
-		<form action="Commit_Jobs.php" method=post>
-			<input type="submit" value="Commit Jobs" />
 		</form>
 	</div>
 
