@@ -1,57 +1,129 @@
-<HTML>
-<HEAD>
-	<title>Domain Sniper</title>
-	<link rel="stylesheet" href="styles.css" type="text/css">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<title>
+Domain Sniper v1.0
+</title>
+
+<!--
+
+Hey friend! This file shows you how 
+the CSS Theme you downloaded looks with 
+some example HTML form markup.
+
+Check out the README.txt for more info.
+
+-->
+
+<!-- Meta Tags -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!-- JavaScript -->
+<script type="text/javascript" src="scripts/wufoo.js"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/structure.css" type="text/css" />
+<link rel="stylesheet" href="css/form.css" type="text/css" />
+<link rel="stylesheet" href="css/theme.css" type="text/css" />
+
 </head>
-<body>
+
+<body id="public">
 
 <div id="container">
-	<!--Defines the container, in which all the data is displayed-->
+
+<h1><a id="logo" href="">Domain Sniper</a></h1>
+
+<nav>
+	<b><a href="">Scheduler</a></b> |
+	<a href="">Current Schedule</a> |
+	<a href="">Logs</a>
+</nav>
+
+<form class="wufoo" action="../Backend/Add_Job.php" method="post">
+
+	<ul>
+	<li>
+	<label class="desc">Domain Names</label>
+		<div>
+		<textarea rows="10" cols="50" class="field textarea medium"></textarea>
+		</div>
+
+		<p class="instruct">Enter your domain names here.</p>
+	</li>
+
+	<li class="section">
+		<h3>Timing Information</h3>
+	</li>
+
+	<li>
+	<label class="desc">Date</label>
+		<span>
+		<input class="field text" size="2" type="text" name="b_month" maxlength="2" value=""/> / 
+		<label>MM</label>
+		</span>
+
+		<span>
+		<input class="field text" size="2" type="text" name="b_day" maxlength="2" value=""/>  
+		<label>DD</label>
+		</span>
+
+		</li>
+
+	<li>
+	<label class="desc">Start Time</label>
+		<span>
+		<input class="field text" size="2" type="text" name="b_hour" maxlength="2" value=""/> : 
+		<label>HH</label>
+		</span>
 	
-	<div id="header">
-		<!--This is the header, with the big title-->
-		<h1 style="margin-bottom:0;"><br/>
-		<div id="logo" style="float:left;"> <img align=left src="missing.gif" alt="LOGO GOES HERE"/> </div>		PAGE TITLE <br/>
-		</h1>
-	</div>
+		<span>
+		<input class="field text" size="2" type="text" name="b_minute"  maxlength="2" value=""/>  
+		<label>MM</label>
+		</span>
+
+		<span>
+		<select class="field select" name="b_am_pm" style="width:4em">
+		<option value="AM">AM</option>
+		<option value="PM">PM</option>
+		</select>
+		<label>AM/PM</label>
+		</span>
+	</li>
+<li>
+	<label class="desc">End Time</label>
+		<span>
+		<input class="field text" size="2" type="text" name="e_hour" maxlength="2" value=""/> : 
+		<label>HH</label>
+		</span>
 	
-	<div id="menu">
-		<!--Menu area. Put items here-->
-		<b> Menu</b>
-		<br/>
-		&nbsp &nbsp<a href="">_Home_</a><br/>
-	</div>
+		<span>
+		<input class="field text" size="2" type="text" name="e_minute"  maxlength="2" value=""/>  
+		<label>MM</label>
+		</span>
 
-	<div id="breadcrumbs">
-		<nav>
-			<b><a href="#">HOME</a></b> |
-			<a href="scheduler.html">SCHEDULER</a> |
-			<a href="reg.out">LOGS</a> |
-		<!--	<a href="settings.html">SETTINGS</a> -->
-		</nav>
-		<!--Needs to be custom made for each page at this time-->
-	</div>
+		<span>
+		<select class="field select" name="e_am_pm" style="width:4em">
+		<option value="AM">AM</option>
+		<option value="PM">PM</option>
+		</select>
+		<label>AM/PM</label>
+		</span>
+	</li>
 
-	<div id="content">
-		<!--This is the main content area. Everything goes here.-->
-		<form action="../Backend/Add_Job.php" method=post>
-			Domain Name(s)(Comma seperated list, no spaces, no www) :<br /> <textarea name="domains" rows="36" cols="55"></textarea><br /><!--<input type="text" name="domains" /><br />-->
-			Hour To Begin: <input type="text" name="b_hour" /><br />
-			Hour To End: <input type="text" name="e_hour" /><br />
-			Day: <input type="text" name="b_day" /><br />
-			Month: <input type="text" name="b_month" /><br />
-			Minute To Begin: <input type="text" name="b_minute" /><br />
-			Minute To End: <input type="text" name="e_minute" /><br />
-			<input type="submit" value="Add Jobs" />
-		</form>
-	</div>
+	<li class="buttons">
+		<input id="saveForm" class="btTxt" type="submit" value="Add Job" />
+	</li>
+	</ul>
 
+</form>
 
-	<div id="footer">
-		<!--This is the footer.-->
-		<font color="white"> Domain Sniper 1.0,  Copyright 2011 </font>
-	</div> 
-</div> 
+</div><!--container-->
+<img id="bottom" src="images/bottom.png" alt="" />
 
 </body>
+
 </html>
