@@ -11,7 +11,7 @@
 				$f_ptr = fopen("reg.txt", "a+");
 				$temp = count($file);
 				fwrite($f_ptr, date("r")." $file[$i] was checked and is available"." Index:$i  count(file):$temp \n");
-				if(($response == true){
+				if($response == true){
 					fwrite($f_ptr, date("r")." $file[$i] was registered"." Index:$i  count(file):$temp \n");
 				}
 				else{
