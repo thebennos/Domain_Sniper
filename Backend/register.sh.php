@@ -8,7 +8,7 @@
 		for($i = 0; $i < count($file); $i++){
 			if($D_api->isAvailable($file[$i])){
 				$response = $D_api->register($file[$i], "1");
-				$f_ptr = fopen("reg.txt", "a+");
+				$f_ptr = fopen(dirname(__FILE__)."/reg.txt", "a+");
 				$temp = count($file);
 				fwrite($f_ptr, date("r")." $file[$i] was checked and is available"." Index:$i  count(file):$temp \n");
 				if($response == true){
@@ -22,7 +22,7 @@
 				$file = array_values($file);
 			}
 			else{
-				$f_ptr = fopen("reg.txt", "a+");
+				$f_ptr = fopen(dirname(__FILE__)."/reg.txt", "a+");
 				$temp = count($file);
 				fwrite($f_ptr, "$file[$i] was checked and is not available"." Index:$i  count(file):$temp \n");
 				fclose($f_ptr);
