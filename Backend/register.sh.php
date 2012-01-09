@@ -30,4 +30,7 @@
 			sleep(10);
 		}
 	}
+	$f_ptr = fopen(dirname(__FILE__)."/reg.txt", "a+");
+	fwrite($f_ptr, "=================END OF JOB====================\n\n\n");
+	fclose($f_ptr);
 ?>

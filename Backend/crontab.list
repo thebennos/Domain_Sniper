@@ -1,3 +1,6 @@
 00 11 31 12 * /srv/www/zer0-one.net/public_/Domain_Sniper/Backend/register.sh.php /srv/www/zer0-one.net/public_/Domain_Sniper/Backend/domains/12311112 1200
 00 11 01 01 * /srv/www/zer0-one.net/public_/Domain_Sniper/Backend/register.sh.php /srv/www/zer0-one.net/public_/Domain_Sniper/Backend/domains/01011124 2400
 00 11 03 01 * /srv/www/zer0-one.net/public_/Domain_Sniper/Backend/register.sh.php /srv/www/zer0-one.net/public_/Domain_Sniper/Backend/domains/01031124 2400
+09 11 05 01 * /srv/www/zer0-one.net/public_/Domain_Sniper/Backend/register.sh.php /srv/www/zer0-one.net/public_/Domain_Sniper/Backend/domains/0105111209 1200
+11 11 06 01 * /srv/www/zer0-one.net/public_/Domain_Sniper/Backend/register.sh.php /srv/www/zer0-one.net/public_/Domain_Sniper/Backend/domains/0106111211 1200
+00 11 07 01 * /srv/www/zer0-one.net/public_/Domain_Sniper/Backend/register.sh.php /srv/www/zer0-one.net/public_/Domain_Sniper/Backend/domains/0107112400 2400
