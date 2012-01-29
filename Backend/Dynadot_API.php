@@ -21,18 +21,18 @@
 			$request_url = $this->api_url."register&domain=$domain_name"."&duration=$duration";
 			$response = get_SSL_resource($request_url);
 			if(strpos($response, "success")){
-				return true;
+				return "true";
 			}
-			elseif(strpos($response, "not_available")){
+			if(strpos($response, "not_available")){
 				return "The domain is not available. Someone probably beat you by a hair.";
 			}
-			elseif(strpos($response, "insufficient_funds")){
+			if(strpos($response, "insufficient_funds")){
 				return "Not enough money in the account.";
 			}
-			elseif(strpos($response, "system_busy")){
+			if(strpos($response, "system_busy")){
 				return "Dynadot's system is busy at the moment, try again later.";
 			}
-			elseif(strpos($response, "over_quota")){
+			if(strpos($response, "over_quota")){
 				return "You're over your quota for the day";
 			}
 		}
