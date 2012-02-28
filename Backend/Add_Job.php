@@ -19,4 +19,5 @@
 		add_job("crontab.list", $_POST['b_month'], $_POST['b_day'], $b_hour, $e_hour, $_POST['b_minute'], $e_min, getcwd()."/register.sh.php $file");
 	}
 	copy_jobs("crontab.list");
+	echo("Job Added. You may use your browser's back button to return.")
 ?>

@@ -33,7 +33,16 @@
 				return "Dynadot's system is busy at the moment, try again later.";
 			}
 			if(strpos($response, "over_quota")){
-				return "You're over your quota for the day";
+				return "You're over your quota for the day.";
+			}
+			if(strpos($response, "offline")){
+				return "The central registry for this domain is offline."
+			}
+			if(strpos($response, "error")){
+				$f_ptr = fopen("error.log", "a+");
+				fwrite($f_ptr, $response);
+				fclose($f_ptr);
+				return "There was a syntax or registry error in processing the request. Check error.log"
 			}
 		}
 	}
