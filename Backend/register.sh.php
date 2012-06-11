@@ -1,7 +1,7 @@
 #!/usr/bin/php
 <?php include 'Dynadot_API.php';
 	if($argv[2] == NULL){exit(1);}
-	$D_api = new Dynadot_API("7R8g8R7q6Ce9I8I8H7Qv6Z6y857Z8f");
+	$D_api = new Dynadot_API("INSERT API KEY HERE");
 	$file = file($argv[1], FILE_IGNORE_NEW_LINES);
 	while(true){
 		if((count($file) == 0) || (date("Gi") == $argv[2])){break;}
